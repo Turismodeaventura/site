@@ -34,7 +34,7 @@ header {
     height: auto;
 }
 .logo h1 {
-    font-size: 27px;
+    font-size: 24px;
     font-weight: 500;
     margin-left: 14px;
 }
@@ -80,16 +80,21 @@ header {
     margin: auto;
     margin-top: 60px;
 }
-#container img {
-    flex: 0 50%;
-    max-width: 50%;
-    height: auto;
+.img {
+    flex: 1;
+    text-align: center;
+}
+.img img {
+    max-width: 524px;
+    max-height: 350px;
+    object-fit: cover;
 }
 .content {
+    flex: 1;
     padding: 50px;
 }
 .content h2 {
-    font-size: 40px;
+    font-size: 30px;
     margin-bottom: 20px;
 }
 .content p {
@@ -120,6 +125,7 @@ header {
 .card img {
     width: 100%;
     height: auto;
+    object-fit: cover;
 }
 .card-content {
     padding: 16px;
@@ -147,12 +153,16 @@ header {
     margin: auto;
     margin-top: 20px;
 }
-#container2 img {
-    flex: 0 50%;
-    max-width: 48%;
-    height: auto;
+.img-grupo {
+    flex: 1;
     margin-top: 30px;
     margin-bottom: 30px;
+    text-align: center;
+}
+.img-grupo img {
+    width: 500px;
+    max-height: 370px;
+    object-fit: cover;
 }
 #container2 .content {
     padding: 50px;
@@ -176,24 +186,25 @@ header {
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 40px;
+    margin-bottom: 40px;
+    gap: 40px;
 }
 .actions {
-    width: 430px;
+    width: 370px;
     background-color: #fefafae4;;
     border-radius: 14px;
     box-shadow: 0px 0px 5px 0.5px rgb(0, 0, 0, 0.2);    
     overflow: hidden;
     transition: 1s all linear;
-    margin: 70px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 30px;
 }
 .actions:hover {
     transform: translateY(-30px);
 }
 .actions img {
     width: 100%;
-    height: auto;
+    height: 246px;
+    object-fit: cover;
 }
 .actions-content {
     padding: 16px;
@@ -213,18 +224,46 @@ footer {
     height: 300px;
     margin-top: 40px;
     background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-
-
-
-
-
-
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+.footer--social,
+.footer--logos {
+    display: flex;
+    flex: 1;
+}
+.footer--social {
+    flex-direction: column;
+    color: #fefafa;
+}
+.infos {
+    font-weight: 500;
+    margin-top: 40px;
+}
+.footer--logos {
+    align-items: center;
+    justify-content: flex-end;
+}
+.footer--logos img {
+    width: 100px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.footer--logos .logo--escola {
+    width: 200px;
+    height: 73px;
+}
 
 /*RESPONSIVIDADE*/
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 900px) {
     header {
         min-width: 100%;
     }
@@ -241,9 +280,8 @@ footer {
         flex-direction: column;
         margin-top: 30px;
     }
-    #container img {
+    .img {
         flex: 0 100%;
-        max-width: 100%;
     }
     .content {
         flex: 0 100%;
@@ -265,11 +303,14 @@ footer {
     #container2 {
         flex-direction: column;
     }
-    #container2 img {
+    .img-grupo {
         flex: 0 100%;
-        max-width: 100%;
         margin: 0;
         margin-top: 30px;
+    }
+    .img-grupo img {
+        max-width: 280px;
+        max-height: 210px;
     }
     #container2 .content {
         margin: 0;
@@ -282,7 +323,7 @@ footer {
     }
 }
 
-@media (min-width: 390px) and (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
     header {
         min-width: 100%;
         height: 80px;
@@ -300,9 +341,12 @@ footer {
         flex-direction: column;
         margin-top: 30px;
     }
-    #container img {
+    .img {
         flex: 0 100%;
-        max-width: 100%;
+    }
+    .img img {
+        max-width: 390px;
+        max-height: 260px;
     }
     .content {
         flex: 0 100%;
@@ -324,10 +368,14 @@ footer {
     #container2 {
         flex-direction: column;
     }
-    #container2 img {
+    .img-grupo {
         flex: 0 100%;
-        max-width: 100%;
-        margin-bottom: 10px;
+        margin: 0;
+        margin-top: 30px;
+    }
+    .img-grupo img {
+        max-width: 400px;
+        max-height: 300px;
     }
     #container2 .content {
         padding: 0;
@@ -335,7 +383,7 @@ footer {
         margin-bottom: 20px;
     }
     .actions-container {
-        margin-top: 20px;
+        margin-top: 40px;
     }
     .actions:hover {
         transform: none;
@@ -343,18 +391,28 @@ footer {
     footer {
         margin-top: 40px;
     }
+    .footer {
+        flex-direction: column;
+    }
+    .footer--logos {
+        margin-top: 30px;
+    }
 }
 
+/**/
 @media (max-width: 390px) {
+    #img-fundo {
+        max-height: 100vh;
+    }
     header {
         min-width: 100%;
         height: 80px;
     }
     .logo img {
-        width: 60px;
+        width: 50px;
     }
     .logo h1 {
-        font-size: 17px;
+        font-size: 15px;
     }
     .menu {
         display: none;
@@ -363,9 +421,12 @@ footer {
         flex-direction: column;
         margin-top: 30px;
     }
-    #container img {
+    .img {
         flex: 0 100%;
-        max-width: 100%;
+    }
+    .img img {
+        max-width: 290px;
+        max-height: 194px;
     }
     .content {
         flex: 0 100%;
@@ -390,10 +451,14 @@ footer {
     #container2 {
         flex-direction: column;
     }
-    #container2 img {
+    .img-grupo {
         flex: 0 100%;
-        max-width: 100%;
-        margin-bottom: 20px;
+        margin: 0;
+        margin-top: 30px;
+    }
+    .img-grupo img {
+        max-width: 280px;
+        max-height: 210px;
     }
     #container2 .content {
         margin-top: 10px;
@@ -402,11 +467,33 @@ footer {
     }
     .actions-container {
         margin-top: 20px;
+        gap: 0;
+    }
+    .actions img {
+        height: 210px;
+        object-fit: cover;
+    }
+    .actions-content p,
+    .card-content p {
+        font-size: 14px;
     }
     .actions:hover {
         transform: none;
     }
     footer {
         margin-top: 40px;
+    }
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 12px;
+    }
+    .footer--logos {
+        margin-top: 30px;
+    }
+    .footer--logos img{
+        width: 30%;
+        margin: 0 8px;
     }
 }
